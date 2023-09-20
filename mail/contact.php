@@ -1,7 +1,4 @@
 <?php
-$header = "From: $email\r\n";
-$header .= "Reply-To: $email\r\n";
-$header .= "Content-Type: application/x-www-form-urlencoded\r\n";
 
 if(empty($_POST['name']) || empty($_POST['subject']) || empty($_POST['message']) || !filter_var($_POST['email'], FILTER_VALIDATE_EMAIL)) {
   http_response_code(500);
@@ -19,12 +16,7 @@ $body = "You have received a new message from your website contact form.\n\n"."H
 $header = "From: $email";
 $header .= "Reply-To: $email";	
 
-if (mail($to, $subject, $body, $header)) {
-  // email sent successfully
-} else {
-  // email failed to send
-  $body .= "\n\nError: The email could not be sent.";
-}
+
 if(!mail($to, $subject, $body, $header))
   http_response_code(500);
 ?>
