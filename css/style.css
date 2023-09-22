@@ -16,6 +16,7 @@ h6 {
     color: #414141;
 }
 
+
 a {
     color: #313131;
     transition: .3s;
@@ -1588,4 +1589,8 @@ a:focus {
         line-height: 16px;
         padding: 0 5px;
     }
+}
+
+.mail-contact , .wts-contact{
+    color: white;
 }
